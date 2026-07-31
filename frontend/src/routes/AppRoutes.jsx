@@ -12,6 +12,7 @@ import Contact from "../pages/public/Contact";
 
 import Login from "../pages/auth/Login";
 import Register from "../pages/auth/Register";
+import AdminLogin from "../pages/auth/AdminLogin";
 
 import Events from "../pages/events/Events";
 import EventDetails from "../pages/events/EventDetails";
@@ -50,6 +51,7 @@ function AppRoutes() {
 
         <Route path="/login" element={<Login />} />
         <Route path="/register" element={<Register />} />
+        <Route path="/admin/login" element={<AdminLogin />} />
 
         {/* Protected Customer Routes */}
         <Route element={<ProtectedRoute />}>
