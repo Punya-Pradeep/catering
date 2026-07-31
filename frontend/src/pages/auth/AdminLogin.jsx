@@ -49,7 +49,7 @@ function AdminLogin() {
             <p className="text-red-400 text-sm mb-4 text-center bg-red-900/30 py-2 rounded-lg">{error}</p>
           )}
 
-          <form onSubmit={handleSubmit} className="space-y-4">
+          <form onSubmit={handleSubmit} className="space-y-4" autoComplete="off">
             <div>
               <label className="block text-xs font-medium text-gray-400 mb-1.5">Admin Email</label>
               <input
@@ -57,6 +57,7 @@ function AdminLogin() {
                 placeholder="admin@caterease.com"
                 value={email}
                 onChange={(e) => setEmail(e.target.value)}
+                autoComplete="new-email"
                 className="w-full bg-gray-700 border border-gray-600 text-white placeholder-gray-500 px-4 py-3 rounded-xl text-sm focus:outline-none focus:ring-2 focus:ring-orange-500"
                 required
               />
@@ -68,6 +69,7 @@ function AdminLogin() {
                 placeholder="••••••••"
                 value={password}
                 onChange={(e) => setPassword(e.target.value)}
+                autoComplete="new-password"
                 className="w-full bg-gray-700 border border-gray-600 text-white placeholder-gray-500 px-4 py-3 rounded-xl text-sm focus:outline-none focus:ring-2 focus:ring-orange-500"
                 required
               />

@@ -33,6 +33,7 @@ function Login() {
       <form
         onSubmit={handleSubmit}
         className="bg-white shadow-lg p-8 rounded-xl w-full max-w-md"
+        autoComplete="off"
       >
         <h1 className="text-3xl font-bold text-center">Login</h1>
 
@@ -45,6 +46,7 @@ function Login() {
           placeholder="Email"
           value={email}
           onChange={(e) => setEmail(e.target.value)}
+          autoComplete="new-email"
           className="w-full border p-3 rounded-lg mt-6"
           required
         />
@@ -54,6 +56,7 @@ function Login() {
           placeholder="Password"
           value={password}
           onChange={(e) => setPassword(e.target.value)}
+          autoComplete="new-password"
           className="w-full border p-3 rounded-lg mt-4"
           required
         />
