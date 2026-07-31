@@ -1,9 +1,11 @@
-import { useState } from "react";
+import { useState, useContext } from "react";
 import { Link, useNavigate } from "react-router-dom";
 import { registerUser } from "../../services/authService";
+import { AuthContext } from "../../context/AuthContext";
 
 function Register() {
   const navigate = useNavigate();
+  const { login } = useContext(AuthContext);
   const [formData, setFormData] = useState({
     name: "",
     email: "",
@@ -22,8 +24,9 @@ function Register() {
     setError("");
     setLoading(true);
     try {
-      await registerUser(formData);
-      navigate("/login");
+      const data = await registerUser(formData);
+      login(data);
+      navigate("/dashboard");
     } catch (err) {
       setError(err.message);
     } finally {
