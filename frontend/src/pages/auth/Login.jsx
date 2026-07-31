@@ -18,8 +18,9 @@ function Login() {
     setLoading(true);
     try {
       const data = await loginUser({ email, password });
-      login({ ...data.user, token: data.token });
-      navigate("/dashboard");
+      const userData = { ...data.user, token: data.token };
+      login(userData);
+      navigate(userData.role === "admin" ? "/admin" : "/dashboard");
     } catch (err) {
       setError(err.message);
     } finally {

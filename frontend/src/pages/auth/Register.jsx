@@ -25,7 +25,8 @@ function Register() {
     setLoading(true);
     try {
       const data = await registerUser(formData);
-      login(data);
+      const userData = { ...data.user, token: data.token };
+      login(userData);
       navigate("/dashboard");
     } catch (err) {
       setError(err.message);
